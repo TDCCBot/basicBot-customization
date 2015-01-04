@@ -3,8 +3,8 @@ basicBot-customization
 Click [here](https://github.com/Yemasthui/basicBot) for basicBot's main repository.
 
 Using custom room settings or adding functionality is done by loading your own script loading and modifying the bot.
-This repository's purpose is to facilitate this. You can fork the repository and customise [the example script](https://github.com/Yemasthui/basicBot-customization/blob/master/extension.js). 
-When you have forked the repo, bookmark the following script, __but change _Yemasthui_ to your own github handle__. 
+This repository's purpose is to facilitate this. You can fork the repository and customise [the example script](https://github.com/TDCCBot/basicBot-customization/blob/patch-2/extensionbot.js). 
+When you have forked the repo, bookmark the following script, __but change _TDCCBot_ to your own github handle__. 
 
 `javascript:(function(){$.getScript('https://rawgit.com/Yemasthui/basicBot-customization/master/extension.js');})();`
 
