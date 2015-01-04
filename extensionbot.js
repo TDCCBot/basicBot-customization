@@ -55,19 +55,19 @@
     localStorage.setItem("basicBotsettings", JSON.stringify({
         botName: "basicBot",
         language: "english",
-        chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
-        maximumAfk: 120,
-        afkRemoval: true,
+        chatLink: "https://rawgit.com/TDCCBot/basicBot-customisation/tree/patch-1/lang/en.json",
+        maximumAfk: false,
+        afkRemoval: false,
         maximumDc: 60,
         bouncerPlus: true,
         lockdownEnabled: false,
         lockGuard: false,
         maximumLocktime: 10,
-        cycleGuard: true,
+        cycleGuard: false,
         maximumCycletime: 10,
-        timeGuard: true,
+        timeGuard: false,
         maximumSongLength: 10,
-        autodisable: true,
+        autodisable: false,
         commandCooldown: 30,
         usercommandsEnabled: true,
         lockskipPosition: 3,
@@ -89,22 +89,22 @@
         etaRestriction: false,
         welcome: true,
         opLink: null,
-        rulesLink: null,
+        rulesLink: http://goo.gl/C1ZICB,
         themeLink: null,
-        fbLink: null,
+        fbLink: http://facebook.com/groups/indiegoogle,
         youtubeLink: null,
         website: null,
         intervalMessages: [],
         messageInterval: 5,
-        songstats: true,
+        songstats: false,
         commandLiteral: "!",
         blacklists: {
-            NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
-            OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json"
+            NSFW: "https://rawgit.com/TDCCBot/basicBot-customization/tree/patch-1/blacklists/ExampleNSFWlist.json",
+            OP: "https://rawgit.com/TDCCBot/basicBot-customization/tree/patch-1/blacklists/ExampleOPlist.json"
         }
     }));
 
     //Start the bot and extend it when it has loaded.
-    $.getScript('https://rawgit.com/Yemasthui/basicBot/master/basicBot.js', extend);
+    $.getScript('https://rawgit.com/TDCCBot/basicBot/tree/patch-1/extension.js', extend);
 
 }).call(this);
