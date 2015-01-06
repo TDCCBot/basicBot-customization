@@ -45,6 +45,18 @@
             }
         };
 
+        bot.commands.helloCommand = {
+            command: 'hello'
+            rank: 'user'
+            type: 'exact'
+            functionality: function (chat, cmd) {
+                if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                if (!bot.commands.executable(this.rank, chat)) return void (0);
+                else {
+                    API. sendChat("/me Hello there. Welcome to IndieGoogle! Enjoy!")
+                }
+            }
+        }
         //Load the chat package again to account for any changes
         bot.loadChat();
 
@@ -53,54 +65,56 @@
     //Change the bots default settings and make sure they are loaded on launch
 
     localStorage.setItem("basicBotsettings", JSON.stringify({
-        botName: "basicBot",
+        botName: "TDCCBot",
         language: "english",
         chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
-        maximumAfk: 120,
-        afkRemoval: true,
+        maximumAfk: 5000,
+        afkRemoval: false,
         maximumDc: 60,
         bouncerPlus: true,
         lockdownEnabled: false,
         lockGuard: false,
         maximumLocktime: 10,
-        cycleGuard: true,
+        cycleGuard: false,
         maximumCycletime: 10,
-        timeGuard: true,
-        maximumSongLength: 10,
-        autodisable: true,
+        timeGuard: false,
+        maximumSongLength: 15,
+        autodisable: false,
         commandCooldown: 30,
         usercommandsEnabled: true,
-        lockskipPosition: 3,
+        lockskipPosition: 1,
         lockskipReasons: [
-            ["theme", "This song does not fit the room theme. "],
-            ["op", "This song is on the OP list. "],
-            ["history", "This song is in the history. "],
-            ["mix", "You played a mix, which is against the rules. "],
-            ["sound", "The song you played had bad sound quality or no sound. "],
-            ["nsfw", "The song you contained was NSFW (image or sound). "],
-            ["unavailable", "The song you played was not available for some users. "]
+            ["fridayonly", "Sorry, but this song only fits on a Friday. Try again."],
+            ["dubstep", "Sorry, but this is dubstep/Hard-EDM, which is STRICTLY prohbibited here."],
+            ["op", "Apologies, this song is on the OP list. "],
+            ["history", "Check the DJ History, please. This song is in the DJ history. "],
+            ["mix", "Head's up! You played a mix. This is against the rules. "],
+            ["sound", "Apparently, the song you played had bad sound quality or no sound. "],
+            ["nsfw", "The song you contained was not safe for work. Note that some people may be working! "],
+            ["unavailable", "The song you played was not available for some users. Pick a song that's available worldwide."],
+            ["pop", "This song was skipped since it is of Top 40/100 Pop. Please play this on a Friday"]
         ],
-        afkpositionCheck: 15,
-        afkRankCheck: "ambassador",
+        afkpositionCheck: 25,
+        afkRankCheck: "bouncer",
         motdEnabled: false,
-        motdInterval: 5,
+        motdInterval: 30,
         motd: "Temporary Message of the Day",
-        filterChat: true,
+        filterChat: false,
         etaRestriction: false,
-        welcome: true,
+        welcome: false,
         opLink: null,
-        rulesLink: null,
+        rulesLink: "http://goo.gl/C1ZICB",
         themeLink: null,
-        fbLink: null,
+        fbLink: "https://www.facebook.com/groups/indiegoogle/",
         youtubeLink: null,
         website: null,
         intervalMessages: [],
         messageInterval: 5,
-        songstats: true,
+        songstats: false,
         commandLiteral: "!",
         blacklists: {
-            NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
-            OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json"
+            NSFW: "https://rawgit.com/TDCCBot/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
+            OP: "https://rawgit.com/TDCCBot/basicBot-customization/master/blacklists/ExampleOPlist.json"
         }
     }));
 
