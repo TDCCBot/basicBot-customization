@@ -84,6 +84,19 @@
             }
         };
         
+        bot.commands.baCommand = {
+            command: 'ba',
+            rank: 'user',
+            type: 'exact',
+            functionality: function (chat, cmd) {
+                if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                if (!bot.commands.executable(this.rank,chat)) return void (0);
+                else {
+                    API.sendchat("/me If you're wondering why some usernames are green, they're Brand Ambassadors.")
+                }
+            }
+        };
+        
         //Load the chat package again to account for any changes
         bot.loadChat();
 
